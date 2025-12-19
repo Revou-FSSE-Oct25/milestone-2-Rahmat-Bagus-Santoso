@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Landing Page for the javascript games" />
     <meta name="keywords" content="homepage, index, minigames, javascript games" />
-    <title>Rock, Paper, Scissors game</title>
+    <title>Guess Number Game Page</title>
     <link rel="stylesheet" href="/dist/output.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
@@ -38,10 +38,10 @@
                 class="space-y-2 pl-4 text-sm md:absolute md:top-full md:left-0 md:w-56 md:bg-white md:text-gray-700 md:shadow-md md:rounded-md md:p-3 md:hidden md:group-hover:block"
               >
                 <li>
-                  <a href="guessnumber.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Guessing Number</a>
+                  <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-200">Guessing Number</a>
                 </li>
                 <li>
-                  <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-200">Rock, Paper, Scissors</a>
+                  <a href="rps.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Rock, Paper, Scissors</a>
                 </li>
                 <li>
                   <a href="clicker.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Clicker</a>
@@ -55,65 +55,52 @@
     </header>
 
     <!-- Main Content -->
-    <main class="min-h-screen pt-16 flex items-center 
-    justify-center px-4">
+    <main class="min-h-screen pt-16 flex items-center justify-center px-4">
       <section id="guessContent" class="w-full max-w-xl rounded-2xl bg-white p-6 shadow-lg md:p-8">
-        <h1 class="text-2xl font-semibold text-gray-900">Rock, Paper, Scissors</h1>
+        <h1 class="text-2xl font-semibold text-gray-900">Guess the Number</h1>
 
-        <p class="mt-2 text-gray-600">Choose one options and see if you can beat the computer.</p>
+        <p class="mt-2 text-gray-600">Try to guess the randomly generated number between 1 and 100.</p>
 
-        <div class="mt-6">
+        <div id="initArea" class="mt-6">
           <input
             type="text"
             id="userNameInput"
-            class="w-full rounded-md border border-gray-300 my-4 px-3 py-2"
+            class="w-full rounded-md border border-gray-300 my-4 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400 transition"
             placeholder="Enter your name (optional)"
           />
-          
+          <button id="startBtn" class="rounded-md bg-gray-900 px-4 py-2 text-white hover:bg-gray-800 transition disabled:opacity-50">Play</button>
         </div>
 
-        <div
-      id="choicesArea"
-      class="mt-6 flex justify-center gap-4"
-    >
-      <button
-        data-choice="rock"
-        class="choiceBtn rounded-md border border-gray-300 px-4 py-2 hover:bg-gray-100"
-      >
-        🪨 Rock
-      </button>
+        <div id="gameArea" class="mt-6 hidden">
+          <div class="flex items-center gap-2">
+            <input
+              type="number"
+              id="guessNumber"
+              class="w-full rounded-md border border-gray-300 my-4 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400 transition appearance-none"
+              placeholder="Enter your guess"
+            />
 
-      <button
-        data-choice="paper"
-        class="choiceBtn rounded-md border border-gray-300 px-4 py-2 hover:bg-gray-100"
-      >
-        📄 Paper
-      </button>
+            <button
+              id="submitBtn"
+              class="h-10 px-4 rounded-md bg-gray-900 text-sm text-white flex items-center justify-center hover:bg-gray-800 transition disabled:opacity-50"
+            >
+              Submit
+            </button>
 
-      <button
-        data-choice="scissors"
-        class="choiceBtn rounded-md border border-gray-300 px-4 py-2 hover:bg-gray-100"
-      >
-        ✂️ Scissors
-      </button>
-    </div>
-    <div
-      id="result"
-      class="mt-6 text-center text-sm font-medium text-gray-700"
-    ></div>
+            <button
+              id="playAgainBtn"
+              class="h-10 px-4 rounded-md border border-gray-300 text-sm text-gray-700 flex items-center justify-center hover:bg-gray-100 transition disabled:opacity-40 disabled:cursor-not-allowed"
+              disabled
+            >
+              Play Again
+            </button>
+          </div>
 
-          <div class="mt-6 text-center">
-      <button
-        id="playAgainBtn"
-        class="rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-40"
-        disabled
-      >
-        Play Again
-      </button>
-    </div>
+          <div id="feedback" class="mt-4 h-5 text-shadow-md font-medium text-gray-700"></div>
         </div>
       </section>
-    </main>    
+    </main>
+
     <!-- Footer -->
     <footer class="text-gray-800 font-semibold p-4 text-center border-t border-gray-200 bg-white/90">&copy; 2025 Carbonsdale. All rights reserved.</footer>
     <script src="/src/js/global.js"></script>

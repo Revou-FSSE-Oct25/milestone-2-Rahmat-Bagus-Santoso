@@ -1,59 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Landing Page for the javascript games">
-    <meta name="keywords" content="homepage, index, minigames, javascript games">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Landing Page for the javascript games" />
+    <meta name="keywords" content="homepage, index, minigames, javascript games" />
     <title>Homepage - index</title>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <h1>The Carbonsdale</h1>
-            <p>Explore a variety of mini-games built with JavaScript!</p>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>Games
-                    <ul>
-                        <li><a href="/pages/games/rps.html">Rock, Paper, Scissors</a></li>
-                        <li><a href="/pages/games/clicker.html">Clicker</a></li>
-                        <li><a href="/pages/games/memory.html">Memory Cards Match</a></li>
-                    </ul>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body class="bg-soft-gray text-gray-900">
+    <!-- header -->
+    <header class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+        <p class="text-lg font-semibold">
+          <a href="./index.html" class="text-gray-900 no-underline">Carbonsdale</a>
+        </p>
+
+        <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden" aria-label="Toggle menu">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <nav
+          id="menu-items"
+          aria-label="Main navigation"
+          class="hidden absolute left-0 right-0 top-16 bg-white/95 border-t border-gray-100 shadow-sm p-4 md:static md:scale-y-100 md:bg-transparent md:shadow-none md:p-0 md:flex md:items-center md:border-none"
+        >
+          <ul class="space-y-2 md:space-y-0 md:space-x-4 md:flex md:flex-row text-gray-700">
+            <li><a href="#hero" class="block px-3 py-2 rounded-md hover:bg-gray-200">Home</a></li>
+            <li class="relative group block px-3 py-2 rounded-md hover:bg-gray-200">
+              <button id="submenu-toggle" class="flex items-center gap-1">
+                Games
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <ul
+                id="submenu-items"
+                class="space-y-2 pl-4 text-sm md:absolute md:top-full md:left-0 md:w-56 md:bg-white md:text-gray-700 md:shadow-md md:rounded-md md:p-3 md:hidden md:group-hover:block"
+              >
+                <li>
+                  <a href="/pages/games/guessnumber.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Guessing Number</a>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+                <li>
+                  <a href="/pages/games/rps.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Rock, Paper, Scissors</a>
+                </li>
+                <li>
+                  <a href="/pages/games/clicker.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Clicker</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#contact" class="block px-3 py-2 rounded-md hover:bg-gray-200">Contact</a></li>
+          </ul>
         </nav>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main>
-        <section id="hero">
-            <h2>Welcome to The Carbonsdale!</h2>
-            <p>Discover a collection of fun and engaging mini-games developed using JavaScript. Whether you're looking for a quick distraction or a challenging puzzle, we've got something for everyone!</p>
-        </section>
+      <section id="hero" class="max-w-7xl mx-auto px-4 md:px-6 py-16 border-b border-gray-200">
+        <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
+          <h1 class="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">Welcome to Carbonsdale!</h1>
+          <p class="max-w-xl text-gray-600 text-base md:text-lg">
+            Discover a collection of fun and engaging mini-games developed using JavaScript. Whether you're looking for a quick distraction or a challenging
+            puzzle, we've got something for everyone!
+          </p>
+        </div>
+      </section>
 
-        <section id="featured-games">
-            <h2>Featured Games</h2>
-            <ul>
-                <li><a href="/pages/games/rps.html">Game 1: Rock, Paper, Scissors</a></li>
-                <li><a href="/pages/games/clicker.html">Game 2: Clicker</a></li>
-                <li><a href="/pages/games/memory.html">Game 3: Memory Cards Match</a></li>
-            </ul>
-        </section>
+      <section id="featured-games" class="py-16 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+          <header class="mb-10 max-w-xl">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">Featured Games</h2>
+            <p class="mt-2 text-gray-600">Explore our collection of mini-games built with JavaScript.</p>
+          </header>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <article class="bg-white rounded-xl p-6 shadow-sm">
+              <h3 class="text-lg font-medium text-gray-900">Guessing Number</h3>
+              <p class="mt-2 text-sm text-gray-600">Test your luck and intuition by trying to guess the correct number!</p>
+              <a href="/pages/games/guessnumber.html" class="mt-4 inline-block">Play Now</a>
+            </article>
 
-        <section id="about">
-            <h2>How to Play</h2>
-            <p>Each game has its own unique rules and objectives. Explore the games to learn more about how to play each one!</p>
-        </section>
+            <article class="bg-white rounded-xl p-6 shadow-sm">
+              <h3 class="text-lg font-medium text-gray-900">Rock, Paper, Scissors</h3>
+              <p class="mt-2 text-sm text-gray-600">Challenge a friend to a classic game of Rock, Paper, Scissors!</p>
+              <a href="/pages/games/rps.html" class="mt-4 inline-block">Play Now</a>
+            </article>
+
+            <article class="bg-white rounded-xl p-6 shadow-sm">
+              <h3 class="text-lg font-medium text-gray-900">Clicker Game</h3>
+              <p class="mt-2 text-sm text-gray-600">Click as many times as you can in a limited time!</p>
+              <a href="/pages/games/clicker.html" class="mt-4 inline-block">Play Now</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-16">
+          <header>
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">About Carbonsdale</h2>
+          </header>
+          <div class="mt-6 space-y-4 text-gray-600">
+            <p>Carbonsdale is a fictional game studio focused on building small, fun, and interactive web-based games using modern web technologies.</p>
+            <p>We believe that simple ideas, when executed well, can deliver enjoyable experiences for everyone.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 The Carbonsdale. All rights reserved.</p>
-    </footer>
-
-</body>
+    <footer class="text-gray-800 font-semibold p-4 text-center border-t border-gray-200 bg-white/90">
+        &copy; 2025 Carbonsdale. All rights reserved.
+      </footer>
+    <script src="/src/js/global.js"></script>
+  </body>
 </html>
