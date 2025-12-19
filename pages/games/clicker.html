@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Landing Page for the javascript games" />
+    <meta name="keywords" content="homepage, index, minigames, javascript games" />
+    <title>Clicker game</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body class="bg-soft-gray text-gray-900">
+    <!-- header -->
+    <header class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+        <p class="text-lg font-semibold">
+          <a href="./index.html" class="text-gray-900 no-underline">Carbonsdale</a>
+        </p>
+
+        <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden" aria-label="Toggle menu">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <nav
+          id="menu-items"
+          aria-label="Main navigation"
+          class="hidden absolute left-0 right-0 top-16 bg-white/95 border-t border-gray-100 shadow-sm p-4 md:static md:scale-y-100 md:bg-transparent md:shadow-none md:p-0 md:flex md:items-center md:border-none"
+        >
+          <ul class="space-y-2 md:space-y-0 md:space-x-4 md:flex md:flex-row text-gray-700">
+            <li><a href="/index.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Home</a></li>
+            <li class="relative group block px-3 py-2 rounded-md hover:bg-gray-200">
+              <button id="submenu-toggle" class="flex items-center gap-1">
+                Games
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <ul
+                id="submenu-items"
+                class="space-y-2 pl-4 text-sm md:absolute md:top-full md:left-0 md:w-56 md:bg-white md:text-gray-700 md:shadow-md md:rounded-md md:p-3 md:hidden md:group-hover:block"
+              >
+                <li>
+                  <a href="guessnumber.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Guessing Number</a>
+                </li>
+                <li>
+                  <a href="rps.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Rock, Paper, Scissors</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-200">Clicker</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="/pages/contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen pt-24 flex items-center justify-center px-4">
+      <section class="w-full max-w-md rounded-xl bg-white p-6 shadow-sm">
+        <h1 class="text-2xl font-semibold">Clicker Game</h1>
+        <p class="mt-2 text-gray-600">Click as many times as you can before time runs out.</p>
+
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-600">Time left: <span id="timeLeft">10</span>s</p>
+          <p class="mt-2 text-lg font-medium">Clicks: <span id="clickCount">0</span></p>
+        </div>
+
+        <div class="mt-6 flex justify-center gap-3">
+          <button id="clickBtn" class="rounded-md bg-gray-900 px-4 py-2 text-white hover:bg-gray-800">Click!</button>
+
+          <button id="resetBtn" class="rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-40" disabled>
+            Play Again
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="text-gray-800 font-semibold p-4 text-center border-t border-gray-200 bg-white/90">&copy; 2025 Carbonsdale. All rights reserved.</footer>
+    <script src="/src/js/global.js"></script>
+    <script src="/src/js/clicker.js"></script>
+  </body>
+</html>
