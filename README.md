@@ -6,6 +6,9 @@ Carbonsdale is a fictional game website that features a collection of simple and
 
 This project is created to practice basic web development concepts such as HTML structure, styling with Tailwind CSS, and JavaScript logic.
 
+### Live Demo
+**Github Pages** https://revou-fsse-oct25.github.io/milestone-2-Rahmat-Bagus-Santoso/
+
 ## Available Games
 
 - **Guess the Number**  
@@ -52,4 +55,14 @@ project/
 ```
 
 ## Screenshots
-<img src="" alt="mobile"/>
+- Home
+<img src="assets/images/home.png" alt="landing page"/>
+
+- Guess Number Game
+<img src="assets/images/guessnumber.png" alt="landing page"/>
+
+- Rock, Paper,Scissors
+<img src="assets/images/rps.png" alt="landing page"/>
+
+- Clicker
+<img src="assets/images/clicker.png" alt="landing page"/>
