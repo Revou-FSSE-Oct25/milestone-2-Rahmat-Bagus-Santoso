@@ -117,4 +117,6 @@ playAgainButton.addEventListener("click", () => {
   feedback.textContent = "";
   submitButton.disabled = false;
   playAgainButton.disabled = true;
+
+  console.log("Answer:", randomNumber);
 });
