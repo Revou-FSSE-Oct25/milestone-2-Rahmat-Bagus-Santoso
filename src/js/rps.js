@@ -1,26 +1,24 @@
 // Game state Variables
 let userName = "Guest";
-let playerChoice = null;
-let computerChoice = null;
+let playerChoice = "";
+let computerChoice = "";
+let isUserReady = false;
+let roundsPlayed = 0;
+const MAX_ROUNDS = 5;
 
 // DOM Elements
 const nameInput = document.getElementById("userNameInput");
+const setNameButton = document.getElementById("setNameBtn");
+const userGreeting = document.getElementById("userGreeting");
 const choiceButtons = document.querySelectorAll(".choiceBtn");
-const resultEl = document.getElementById("result");
-const playAgainBtn = document.getElementById("playAgainBtn");
+const resultText = document.getElementById("result");
+const playAgainButton = document.getElementById("playAgainBtn");
 
 //Functions
 const choices = ["rock", "paper", "scissors"];
 
-// function getUserName(inputName) {
-//   return inputName ? inputName : "Guest";
-// }
-function getUser(){
-    if (userName !== "Guest"){
-        return;
-    }
-    const input = nameInput.value.trim();
-    userName = input === "" ? "Guest" : input;
+function getUserName(inputName) {
+  return inputName ? inputName : "Guest";
 }
 
 function getComputerChoice(){
@@ -29,8 +27,9 @@ function getComputerChoice(){
 }
 
 function determineResult(player, computer){
-    if (player === computer)
+    if (player === computer){
         return "draw";
+    }
 
     if (
         (player === "rock" && computer === "scissors") ||
@@ -43,28 +42,63 @@ function determineResult(player, computer){
 }
 
 //Event Listeners
-choiceButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        getUser();
+choiceButtons.forEach(button => {
+    button.disabled = true;
+});
+playAgainButton.disabled = true;
 
-        playerChoice = btn.dataset.choice;
+setNameButton.addEventListener("click", () => {
+    userName = getUserName(nameInput.value.trim());
+    isUserReady = true;
+
+    userGreeting.textContent = `Hello, ${userName}!`;
+    userGreeting.classList.remove("hidden");
+
+    nameInput.classList.add("hidden");
+    setNameButton.classList.add("hidden");
+
+    choiceButtons.forEach(button => {
+        button.disabled = false;
+    });
+});
+
+
+
+choiceButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+
+        playerChoice = button.dataset.choice;
         computerChoice = getComputerChoice();
 
         const result = determineResult(playerChoice, computerChoice);
 
-        resultEl.textContent = `${userName} chose ${playerChoice}. Computer chose ${computerChoice}. Result: ${result.toUpperCase()}`;
+        resultText.textContent = `${userName} chose ${playerChoice}. Computer chose ${computerChoice}. Result: ${result.toUpperCase()}`;
 
-        playAgainBtn.disabled = false;
-        choiceButtons.forEach(b => b.disabled = true);
+        roundsPlayed++;
+        if(roundsPlayed === MAX_ROUNDS){
+            choiceButtons.forEach(button => {
+                button.disabled = true;
+            resultText.textContent = "Round end!!"
+            });
+        }
+        playAgainButton.disabled = false;
     });
 });
 
-playAgainBtn.addEventListener("click", () => {
-    playerChoice = null;
-    computerChoice = null;
-    resultEl.textContent = "";
+playAgainButton.addEventListener("click", () => {
+    playerChoice = "";
+    computerChoice = "";
+    resultText.textContent = "";
+    roundsPlayed = 0;
 
-    choiceButtons.forEach(b => b.disabled = false);
-    playAgainBtn.disabled = true;
+    choiceButtons.forEach(button => button.disabled = false);
+    playAgainButton.disabled = true;
+
+    if(isUserReady){
+        choiceButtons.forEach(button => {
+            button.disabled = false;
+        });
+    }
+    playAgainButton.disabled = true;
 });
 

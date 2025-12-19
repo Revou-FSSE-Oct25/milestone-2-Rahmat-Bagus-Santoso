@@ -60,7 +60,8 @@
       <section id="guessContent" class="w-full max-w-xl rounded-2xl bg-white p-6 shadow-lg md:p-8">
         <h1 class="text-2xl font-semibold text-gray-900">Rock, Paper, Scissors</h1>
 
-        <p class="mt-2 text-gray-600">Choose one options and see if you can beat the computer.</p>
+        <p class="mt-2 text-gray-600">Enter your name and set, play up to 5 rounds</p>
+        <p class="mt-2 text-gray-500">Choose one options and see if you can beat the computer. The best of luck!</p>
 
         <div class="mt-6">
           <input
@@ -70,6 +71,10 @@
             placeholder="Enter your name (optional)"
           />
           
+          <button id="setNameBtn" class="px-4 py-2 rounded-md bg-gray-900 text-sm text-white flex items-center justify-center hover:bg-gray-800 transition">
+            Set
+          </button>
+          <p id="userGreeting" class="mt-4 text-sm font-medium text-gray-700 hidden"></p>
         </div>
 
         <div
@@ -78,21 +83,21 @@
     >
       <button
         data-choice="rock"
-        class="choiceBtn rounded-md border border-gray-300 px-4 py-2 hover:bg-gray-100"
+        class="choiceBtn rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition"
       >
         <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
       </button>
 
       <button
         data-choice="paper"
-        class="choiceBtn rounded-md border border-gray-300 px-4 py-2 hover:bg-gray-100"
+        class="choiceBtn rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition"
       >
         <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
       </button>
 
       <button
         data-choice="scissors"
-        class="choiceBtn rounded-md border border-gray-300 px-4 py-2 hover:bg-gray-100"
+        class="choiceBtn rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition"
       >
         <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
       </button>
