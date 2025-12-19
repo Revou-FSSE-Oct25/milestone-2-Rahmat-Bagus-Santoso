@@ -59,10 +59,10 @@ project/
 <img src="assets/images/home.png" alt="landing page"/>
 
 - Guess Number Game
-<img src="assets/images/guessnumber.png" alt="landing page"/>
+<img src="assets/images/guessnumber.png" alt="guess number game"/>
 
 - Rock, Paper,Scissors
-<img src="assets/images/rps.png" alt="landing page"/>
+<img src="assets/images/rps.png" alt="rock, paper, scissors game"/>
 
 - Clicker
-<img src="assets/images/clicker.png" alt="landing page"/>
+<img src="assets/images/clicker.png" alt="clicker game"/>
