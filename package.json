@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/main.css --watch",
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/main.css --minify"
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/main.css --minify",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }

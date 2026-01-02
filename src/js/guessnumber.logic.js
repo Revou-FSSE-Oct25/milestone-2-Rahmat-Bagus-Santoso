@@ -1,7 +1,7 @@
 // GAME STATE
 // Initial variable when game loaded
 export const MAX_ATTEMPTS = 10;
-const LEADERBOARD_KEY = "guessnumber_leaderboard";
+const LEADERBOARD_KEY = 'guessnumber_leaderboard';
 
 const gameState = {
   targetNumber: 0,
@@ -28,10 +28,10 @@ export function initGame() {
 // INPUT VALIDATION
 // Validate user input before processing the guess
 export function validateInput(input) {
-  if (input === "") {
+  if (input === '') {
     return {
       isValid: false,
-      message: "Please enter a number",
+      message: 'Please enter a number',
     };
   }
 
@@ -39,14 +39,14 @@ export function validateInput(input) {
   if (Number.isNaN(number)) {
     return {
       isValid: false,
-      message: "Please enter a valid number.",
+      message: 'Please enter a valid number.',
     };
   }
 
   if (number < 1 || number > 100) {
     return {
       isValid: false,
-      message: "Number must be between 1 and 100.",
+      message: 'Number must be between 1 and 100.',
     };
   }
 
@@ -58,14 +58,14 @@ export function validateInput(input) {
 export function processGuess(inputValue) {
   if (!gameState.isActive) {
     return {
-      status: "inactive",
+      status: 'inactive',
     };
   }
 
   const validation = validateInput(inputValue);
   if (!validation.isValid) {
     return {
-      status: "invalid",
+      status: 'invalid',
       message: validation.message,
     };
   }
@@ -77,7 +77,7 @@ export function processGuess(inputValue) {
   if (guess === gameState.targetNumber) {
     gameState.isActive = false;
     return {
-      status: "win",
+      status: 'win',
       attemptsLeft: gameState.attemptsLeft,
     };
   }
@@ -85,19 +85,19 @@ export function processGuess(inputValue) {
   if (gameState.attemptsLeft === 0) {
     gameState.isActive = false;
     return {
-      status: "lose",
+      status: 'lose',
       targetNumber: gameState.targetNumber,
     };
   }
 
   if (guess > gameState.targetNumber) {
     return {
-      status: "high",
+      status: 'high',
       attemptsLeft: gameState.attemptsLeft,
     };
   }
   return {
-    status: "low",
+    status: 'low',
     attemptsLeft: gameState.attemptsLeft,
   };
 }

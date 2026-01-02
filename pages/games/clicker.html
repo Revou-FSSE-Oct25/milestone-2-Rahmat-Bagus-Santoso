@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,72 +7,91 @@
     <meta name="keywords" content="homepage, index, minigames, javascript games" />
     <title>Clicker game</title>
     <link rel="stylesheet" href="../../dist/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body class="bg-soft-gray text-gray-900">
     <!-- header -->
-    <header class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
+      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
         <p class="text-lg font-semibold">
           <a href="../../index.html" class="text-gray-900 no-underline">Carbonsdale</a>
         </p>
 
-        <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden" aria-label="Toggle menu">
+        <button id="menu-toggle" class="text-2xl text-gray-700 md:hidden" aria-label="Toggle menu">
           <i class="fa fa-bars"></i>
         </button>
 
         <nav
           id="menu-items"
           aria-label="Main navigation"
-          class="hidden absolute left-0 right-0 top-16 bg-white/95 border-t border-gray-100 shadow-sm p-4 md:static md:scale-y-100 md:bg-transparent md:shadow-none md:p-0 md:flex md:items-center md:border-none"
+          class="absolute top-16 right-0 left-0 hidden border-t border-gray-100 bg-white/95 p-4 shadow-sm md:static md:flex md:scale-y-100 md:items-center md:border-none md:bg-transparent md:p-0 md:shadow-none"
         >
-          <ul class="space-y-2 md:space-y-0 md:space-x-4 md:flex md:flex-row text-gray-700">
-            <li><a href="../../index.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Home</a></li>
-            <li class="relative group block px-3 py-2 rounded-md hover:bg-gray-200">
+          <ul class="space-y-2 text-gray-700 md:flex md:flex-row md:space-y-0 md:space-x-4">
+            <li>
+              <a href="../../index.html" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                >Home</a
+              >
+            </li>
+            <li class="group relative block rounded-md px-3 py-2 hover:bg-gray-200">
               <button id="submenu-toggle" class="flex items-center gap-1">
                 Games
                 <i class="fa fa-caret-down"></i>
               </button>
               <ul
                 id="submenu-items"
-                class="space-y-2 pl-4 text-sm md:absolute md:top-full md:left-0 md:w-56 md:bg-white md:text-gray-700 md:shadow-md md:rounded-md md:p-3 md:hidden md:group-hover:block"
+                class="space-y-2 pl-4 text-sm md:absolute md:top-full md:left-0 md:hidden md:w-56 md:rounded-md md:bg-white md:p-3 md:text-gray-700 md:shadow-md md:group-hover:block"
               >
                 <li>
-                  <a href="./guessnumber.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Guessing Number</a>
+                  <a href="./guessnumber.html" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                    >Guessing Number</a
+                  >
                 </li>
                 <li>
-                  <a href="./rps.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Rock, Paper, Scissors</a>
+                  <a href="./rps.html" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                    >Rock, Paper, Scissors</a
+                  >
                 </li>
                 <li>
-                  <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-200">Clicker</a>
+                  <a href="#" class="block rounded-md px-3 py-2 hover:bg-gray-200">Clicker</a>
                 </li>
               </ul>
             </li>
-            <li><a href="../contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Contact</a></li>
+            <li>
+              <a href="../contact.html" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                >Contact</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
     <!-- Main Content -->
-    <main class="min-h-screen pt-24 px-4 flex justify-center">
-      <section class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="md:col-span-2 space-y-6">
+    <main class="flex min-h-screen justify-center px-4 pt-24">
+      <section class="grid w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
+        <div class="space-y-6 md:col-span-2">
           <div class="rounded-xl bg-white p-5 shadow-sm">
-            <h2 class="text-lg font-semibold mb-2">How to Play</h2>
+            <h2 class="mb-2 text-lg font-semibold">How to Play</h2>
             <p class="text-sm text-gray-600">
-              Click the button as many times as you can before the timer runs out. You can save final score to the leaderboard.
+              Click the button as many times as you can before the timer runs out. You can save
+              final score to the leaderboard.
             </p>
           </div>
 
-          <div class="rounded-xl bg-white p-6 shadow-sm space-y-6 text-center">
+          <div class="space-y-6 rounded-xl bg-white p-6 text-center shadow-sm">
             <div class="flex justify-between text-sm text-gray-600">
               <p>Time Left: <span id="timeLeft" class="font-medium">10</span>s</p>
               <p>Clicks: <span id="clickCount" class="font-medium">0</span></p>
             </div>
 
             <div>
-              <button id="clickButton" class="w-full rounded-md bg-gray-900 px-4 py-3 text-white font-semibold hover:bg-gray-800 disabled:opacity-40">
+              <button
+                id="clickButton"
+                class="w-full rounded-md bg-gray-900 px-4 py-3 font-semibold text-white hover:bg-gray-800 disabled:opacity-40"
+              >
                 Click!
               </button>
             </div>
@@ -91,22 +110,27 @@
 
         <div class="space-y-6">
           <div class="rounded-xl bg-white p-5 shadow-sm">
-            <h2 class="text-lg font-semibold mb-3">Username (optional)</h2>
+            <h2 class="mb-3 text-lg font-semibold">Username (optional)</h2>
             <div class="flex gap-2">
               <input
                 id="usernameInput"
                 type="text"
                 placeholder="Guest"
-                class="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-800"
+                class="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm focus:ring-1 focus:ring-gray-800 focus:outline-none"
               />
-              <button id="usernameSubmit" class="rounded-md bg-gray-900 px-4 py-2 text-sm text-white hover:bg-gray-800">Save</button>
+              <button
+                id="usernameSubmit"
+                class="rounded-md bg-gray-900 px-4 py-2 text-sm text-white hover:bg-gray-800"
+              >
+                Save
+              </button>
             </div>
 
             <p class="mt-2 text-xs text-gray-500">Leave empty to stay as Guest.</p>
           </div>
 
           <div id="leaderboardSection" class="rounded-xl bg-white p-5 shadow-sm">
-            <h2 class="text-lg font-semibold mb-3">Leaderboard</h2>
+            <h2 class="mb-3 text-lg font-semibold">Leaderboard</h2>
             <ul id="leaderboardList" class="space-y-1 text-sm text-gray-700"></ul>
           </div>
         </div>

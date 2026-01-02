@@ -1,6 +1,6 @@
 // GAME STATE
 // Initial variable when game loaded
-const CHOICES = ["rock", "paper", "scissors"];
+const CHOICES = ['rock', 'paper', 'scissors'];
 const MAX_ROUNDS = 3;
 
 const gameState = {
@@ -16,13 +16,17 @@ function getComputerChoice() {
 }
 
 function determineResult(player, computer) {
-  if (player === computer) return "draw";
+  if (player === computer) return 'draw';
 
-  if ((player === "rock" && computer === "scissors") || (player === "scissors" && computer === "paper") || (player === "paper" && computer === "rock")) {
-    return "win";
+  if (
+    (player === 'rock' && computer === 'scissors') ||
+    (player === 'scissors' && computer === 'paper') ||
+    (player === 'paper' && computer === 'rock')
+  ) {
+    return 'win';
   }
 
-  return "lose";
+  return 'lose';
 }
 
 export function playRound(playerChoice) {
@@ -34,8 +38,8 @@ export function playRound(playerChoice) {
   const result = determineResult(playerChoice, computerChoice);
 
   gameState.roundPlayed++;
-  if (result === "win") gameState.playerScore++;
-  if (result === "lose") gameState.computerScore++;
+  if (result === 'win') gameState.playerScore++;
+  if (result === 'lose') gameState.computerScore++;
 
   if (gameState.roundPlayed >= MAX_ROUNDS) {
     gameState.isGameOver = true;

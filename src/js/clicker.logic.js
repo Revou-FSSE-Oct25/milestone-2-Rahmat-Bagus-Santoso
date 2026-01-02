@@ -1,13 +1,13 @@
-import { loadUsername, saveUsername } from "./global.js";
+import { loadUsername, saveUsername } from './global.js';
 
 // Game state Variables
 const GAME_DURATION = 10;
-const LEADERBOARD_KEY = "clicker_leaderboard";
+const LEADERBOARD_KEY = 'clicker_leaderboard';
 let timerId = null;
 const gameState = {
   clicks: 0,
   timeLeft: GAME_DURATION,
-  status: "idle",
+  status: 'idle',
 };
 
 let leaderboard = loadLeaderboard();
@@ -26,15 +26,15 @@ function saveLeaderboard() {
 
 //Functions
 function startGame() {
-  if (gameState.status !== "idle") {
+  if (gameState.status !== 'idle') {
     return;
   }
-  gameState.status = "running";
+  gameState.status = 'running';
   startTimer();
 }
 
 function incrementClick() {
-  if (gameState.status !== "running") {
+  if (gameState.status !== 'running') {
     return;
   }
   gameState.clicks++;
@@ -55,7 +55,7 @@ function tickTimer() {
 function endGame() {
   clearInterval(timerId);
   timerId = null;
-  gameState.status = "finished";
+  gameState.status = 'finished';
 }
 
 function resetGame() {
@@ -63,7 +63,7 @@ function resetGame() {
   timerId = null;
   gameState.clicks = 0;
   gameState.timeLeft = GAME_DURATION;
-  gameState.status = "idle";
+  gameState.status = 'idle';
 }
 
 function submitScore() {

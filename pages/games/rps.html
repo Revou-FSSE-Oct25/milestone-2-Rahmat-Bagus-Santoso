@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,78 +7,115 @@
     <meta name="keywords" content="homepage, index, minigames, javascript games" />
     <title>Rock, Paper, Scissors game</title>
     <link rel="stylesheet" href="../../dist/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body class="bg-soft-gray text-gray-900">
     <!-- header -->
-    <header class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
+      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
         <p class="text-lg font-semibold">
           <a href="../../index.html" class="text-gray-900 no-underline">Carbonsdale</a>
         </p>
 
-        <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden" aria-label="Toggle menu">
+        <button id="menu-toggle" class="text-2xl text-gray-700 md:hidden" aria-label="Toggle menu">
           <i class="fa fa-bars"></i>
         </button>
 
         <nav
           id="menu-items"
           aria-label="Main navigation"
-          class="hidden absolute left-0 right-0 top-16 bg-white/95 border-t border-gray-100 shadow-sm p-4 md:static md:scale-y-100 md:bg-transparent md:shadow-none md:p-0 md:flex md:items-center md:border-none"
+          class="absolute top-16 right-0 left-0 hidden border-t border-gray-100 bg-white/95 p-4 shadow-sm md:static md:flex md:scale-y-100 md:items-center md:border-none md:bg-transparent md:p-0 md:shadow-none"
         >
-          <ul class="space-y-2 md:space-y-0 md:space-x-4 md:flex md:flex-row text-gray-700">
-            <li><a href="../../index.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Home</a></li>
-            <li class="relative group block px-3 py-2 rounded-md hover:bg-gray-200">
+          <ul class="space-y-2 text-gray-700 md:flex md:flex-row md:space-y-0 md:space-x-4">
+            <li>
+              <a href="../../index.html" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                >Home</a
+              >
+            </li>
+            <li class="group relative block rounded-md px-3 py-2 hover:bg-gray-200">
               <button id="submenu-toggle" class="flex items-center gap-1">
                 Games
                 <i class="fa fa-caret-down"></i>
               </button>
               <ul
                 id="submenu-items"
-                class="space-y-2 pl-4 text-sm md:absolute md:top-full md:left-0 md:w-56 md:bg-white md:text-gray-700 md:shadow-md md:rounded-md md:p-3 md:hidden md:group-hover:block"
+                class="space-y-2 pl-4 text-sm md:absolute md:top-full md:left-0 md:hidden md:w-56 md:rounded-md md:bg-white md:p-3 md:text-gray-700 md:shadow-md md:group-hover:block"
               >
                 <li>
-                  <a href="./guessnumber.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Guessing Number</a>
+                  <a href="./guessnumber.html" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                    >Guessing Number</a
+                  >
                 </li>
                 <li>
-                  <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-200">Rock, Paper, Scissors</a>
+                  <a href="#" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                    >Rock, Paper, Scissors</a
+                  >
                 </li>
                 <li>
-                  <a href="./clicker.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Clicker</a>
+                  <a href="./clicker.html" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                    >Clicker</a
+                  >
                 </li>
               </ul>
             </li>
-            <li><a href="../contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-200">Contact</a></li>
+            <li>
+              <a href="../contact.html" class="block rounded-md px-3 py-2 hover:bg-gray-200"
+                >Contact</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
     <!-- Main Content -->
-    <main class="pt-16 flex items-center justify-center px-4">
+    <main class="flex items-center justify-center px-4 pt-16">
       <section class="w-full max-w-xl rounded-2xl bg-white p-6 shadow-lg md:p-8">
         <h1 class="text-2xl font-semibold">Rock, Paper, Scissors</h1>
 
-        <p class="mt-2 text-gray-600">Play a quick match against the computer. First 3 rounds decide the winner.</p>
+        <p class="mt-2 text-gray-600">
+          Play a quick match against the computer. First 3 rounds decide the winner.
+        </p>
 
-        <p class="mt-1 text-gray-500 text-sm">Choose your move and see if you can beat the computer.</p>
+        <p class="mt-1 text-sm text-gray-500">
+          Choose your move and see if you can beat the computer.
+        </p>
         <div class="mt-6 flex justify-center gap-4">
-          <button data-choice="rock" class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition">
+          <button
+            data-choice="rock"
+            class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl transition hover:bg-gray-100 active:scale-95"
+          >
             <i class="fa fa-hand-rock-o"></i>
           </button>
 
-          <button data-choice="paper" class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition">
+          <button
+            data-choice="paper"
+            class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl transition hover:bg-gray-100 active:scale-95"
+          >
             <i class="fa fa-hand-paper-o"></i>
           </button>
 
-          <button data-choice="scissors" class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition">
+          <button
+            data-choice="scissors"
+            class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl transition hover:bg-gray-100 active:scale-95"
+          >
             <i class="fa fa-hand-scissors-o"></i>
           </button>
         </div>
 
-        <div id="feedback" class="mt-6 min-h-12 text-center text-sm font-medium text-gray-700"></div>
+        <div
+          id="feedback"
+          class="mt-6 min-h-12 text-center text-sm font-medium text-gray-700"
+        ></div>
         <div class="mt-6 text-center">
-          <button id="playAgainButton" class="rounded-md border border-gray-300 px-4 py-2 text-md text-gray-700 hover:bg-gray-200 disabled:opacity-40" disabled>
+          <button
+            id="playAgainButton"
+            class="text-md rounded-md border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-200 disabled:opacity-40"
+            disabled
+          >
             Play Again
           </button>
         </div>

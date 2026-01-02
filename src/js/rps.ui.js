@@ -1,19 +1,19 @@
-import { playRound, resetGame } from "./rps.logic.js";
+import { playRound, resetGame } from './rps.logic.js';
 
 const ui = {
-  choiceButton: document.querySelectorAll(".choiceButton"),
-  feedback: document.getElementById("feedback"),
-  playAgainButton: document.getElementById("playAgainButton"),
+  choiceButton: document.querySelectorAll('.choiceButton'),
+  feedback: document.getElementById('feedback'),
+  playAgainButton: document.getElementById('playAgainButton'),
 };
 
 function setChoiceButtonDisabled(disabled) {
-  ui.choiceButton.forEach((button) => {
+  ui.choiceButton.forEach(button => {
     button.disabled = disabled;
   });
 }
 
 function resetUI() {
-  ui.feedback.textContent = "";
+  ui.feedback.textContent = '';
   setChoiceButtonDisabled(false);
   ui.playAgainButton.disabled = true;
 }
@@ -40,12 +40,12 @@ function handlePlayAgain() {
   resetUI();
 }
 
-ui.choiceButton.forEach((button) => {
-  button.addEventListener("click", () => {
+ui.choiceButton.forEach(button => {
+  button.addEventListener('click', () => {
     const playerChoice = button.dataset.choice;
     handlePlayerChoice(playerChoice);
   });
 });
 
-ui.playAgainButton.addEventListener("click", handlePlayAgain);
+ui.playAgainButton.addEventListener('click', handlePlayAgain);
 resetUI();
