@@ -55,73 +55,37 @@
     </header>
 
     <!-- Main Content -->
-    <main class="min-h-screen pt-16 flex items-center 
-    justify-center px-4">
-      <section id="guessContent" class="w-full max-w-xl rounded-2xl bg-white p-6 shadow-lg md:p-8">
-        <h1 class="text-2xl font-semibold text-gray-900">Rock, Paper, Scissors</h1>
+    <main class="pt-16 flex items-center justify-center px-4">
+      <section class="w-full max-w-xl rounded-2xl bg-white p-6 shadow-lg md:p-8">
+        <h1 class="text-2xl font-semibold">Rock, Paper, Scissors</h1>
 
-        <p class="mt-2 text-gray-600">Enter your name and set, play up to 5 rounds</p>
-        <p class="mt-2 text-gray-500">Choose one options and see if you can beat the computer. The best of luck!</p>
+        <p class="mt-2 text-gray-600">Play a quick match against the computer. First 3 rounds decide the winner.</p>
 
-        <div class="mt-6">
-          <input
-            type="text"
-            id="userNameInput"
-            class="w-full rounded-md border border-gray-300 my-4 px-3 py-2"
-            placeholder="Enter your name (optional)"
-          />
-          
-          <button id="setNameBtn" class="px-4 py-2 rounded-md bg-gray-900 text-sm text-white flex items-center justify-center hover:bg-gray-800 transition">
-            Set
+        <p class="mt-1 text-gray-500 text-sm">Choose your move and see if you can beat the computer.</p>
+        <div class="mt-6 flex justify-center gap-4">
+          <button data-choice="rock" class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition">
+            <i class="fa fa-hand-rock-o"></i>
           </button>
-          <p id="userGreeting" class="mt-4 text-sm font-medium text-gray-700 hidden"></p>
+
+          <button data-choice="paper" class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition">
+            <i class="fa fa-hand-paper-o"></i>
+          </button>
+
+          <button data-choice="scissors" class="choiceButton rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition">
+            <i class="fa fa-hand-scissors-o"></i>
+          </button>
         </div>
 
-        <div
-      id="choicesArea"
-      class="mt-6 flex justify-center gap-4"
-    >
-      <button
-        data-choice="rock"
-        class="choiceBtn rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition"
-      >
-        <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
-      </button>
-
-      <button
-        data-choice="paper"
-        class="choiceBtn rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition"
-      >
-        <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
-      </button>
-
-      <button
-        data-choice="scissors"
-        class="choiceBtn rounded-xl border border-gray-300 px-6 py-4 text-2xl active:scale-95 hover:bg-gray-100 transition"
-      >
-        <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div
-      id="result"
-      class="mt-6 text-center text-sm font-medium text-gray-700"
-    ></div>
-
-          <div class="mt-6 text-center">
-      <button
-        id="playAgainBtn"
-        class="rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-40"
-        disabled
-      >
-        Play Again
-      </button>
-    </div>
+        <div id="feedback" class="mt-6 min-h-12 text-center text-sm font-medium text-gray-700"></div>
+        <div class="mt-6 text-center">
+          <button id="playAgainButton" class="rounded-md border border-gray-300 px-4 py-2 text-md text-gray-700 hover:bg-gray-200 disabled:opacity-40" disabled>
+            Play Again
+          </button>
         </div>
       </section>
-    </main>    
-    <!-- Footer -->
-    <footer class="text-gray-800 font-semibold p-4 text-center border-t border-gray-200 bg-white/90">&copy; 2025 Carbonsdale. All rights reserved.</footer>
-    <script src="../../src/js/global.js"></script>
-    <script src="../../src/js/rps.js"></script>
+    </main>
+    <footer></footer>
+    <script src="../../src/js/global.js" type="module"></script>
+    <script src="../../src/js/rps.ui.js" type="module"></script>
   </body>
 </html>

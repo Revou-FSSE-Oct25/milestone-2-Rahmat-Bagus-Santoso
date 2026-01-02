@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Landing Page for the javascript games" />
     <meta name="keywords" content="homepage, index, minigames, javascript games" />
-    <title>Homepage - index</title>
+    <title>Homepage - Carbonsdale</title>
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
@@ -24,7 +24,7 @@
         <nav
           id="menu-items"
           aria-label="Main navigation"
-          class="hidden absolute left-0 right-0 top-16 bg-white/95 border-t border-gray-100 shadow-sm p-4 md:static md:scale-y-100 md:bg-transparent md:shadow-none md:p-0 md:flex md:items-center md:border-none"
+          class="hidden absolute left-0 right-0 top-16 bg-white/95 border-t border-gray-100 shadow-sm p-4 md:static md:bg-transparent md:shadow-none md:p-0 md:flex md:items-center md:border-none"
         >
           <ul class="space-y-2 md:space-y-0 md:space-x-4 md:flex md:flex-row text-gray-700">
             <li><a href="#hero" class="block px-3 py-2 rounded-md hover:bg-gray-200">Home</a></li>
@@ -54,78 +54,86 @@
       </div>
     </header>
 
-    <!-- Main Content -->
     <main>
-      <section id="hero" class="max-w-7xl mx-auto px-4 md:px-6 py-16 border-b border-gray-200">
-        <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
-          <h1 class="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">Welcome to Carbonsdale!</h1>
-          <p class="max-w-xl text-gray-600 text-base md:text-lg">
-            Discover a collection of fun and engaging mini-games developed using JavaScript. Whether you're looking for a quick distraction or a challenging
-            puzzle, we've got something for everyone!
-          </p>
+      <section id="hero" class="relative overflow-hidden py-24 min-h-[70vh]">
+        <div class="absolute inset-0 bg-cover bg-position-[center_60%] opacity-30 scale-110" style="background-image: url('./assets/images/hero.jpg')"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 md:px-6">
+          <div class="max-w-3xl space-y-6">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">Simple Games.<br />Built with Care.</h1>
+            <p class="text-gray-600 text-base md:text-lg">
+              Carbonsdale is a collection of small JavaScript games focused on clarity, structure, and learning through practice.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section id="featured-games" class="py-16 border-b border-gray-200">
+      <section id="featured-games" class="bg-white border-t border-b border-gray-200 py-20">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
-          <header class="mb-10 max-w-xl">
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">Featured Games</h2>
-            <p class="mt-2 text-gray-600">Explore our collection of mini-games built with JavaScript.</p>
+          <header class="mb-12 max-w-xl">
+            <h2 class="text-2xl md:text-3xl font-semibold">Featured Games</h2>
+            <p class="mt-2 text-gray-600">Each game is designed to explore a different core concept.</p>
           </header>
-          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <article class="bg-white rounded-xl p-6 shadow-sm flex flex-col">
-              <h3 class="text-lg font-medium text-gray-900">Guessing Number</h3>
-              <p class="mt-2 text-sm text-gray-600">Test your luck and intuition by trying to guess the correct number!</p>
-              <a href="./pages/games/guessnumber.html" class="mt-auto inline-flex items-center justify-center
-         rounded-lg bg-gray-900
-         px-4 py-2 text-sm font-medium text-white
-         hover:bg-gray-800
-         active:scale-95
-         transition">Play Now</a>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <article class="rounded-xl border border-gray-200 bg-white p-6 flex flex-col gap-4">
+              <span class="text-xs font-semibold text-gray-400">01 · Logic</span>
+              <h3 class="text-lg font-medium">Guessing Number</h3>
+              <p class="text-sm text-gray-600">A classic number guessing game focused on game state, feedback, and win conditions.</p>
+              <a
+                href="./pages/games/guessnumber.html"
+                class="mt-auto inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+                >Play</a
+              >
             </article>
 
-            <article class="bg-white rounded-xl p-6 shadow-sm flex flex-col">
-              <h3 class="text-lg font-medium text-gray-900">Rock, Paper, Scissors</h3>
-              <p class="mt-2 text-sm text-gray-600">Challenge the computer to a classic game of Rock, Paper, Scissors!</p>
-              <a href="./pages/games/rps.html" class="mt-auto inline-flex items-center justify-center
-         rounded-lg bg-gray-900
-         px-4 py-2 text-sm font-medium text-white
-         hover:bg-gray-800
-         active:scale-95
-         transition">Play Now</a>
+            <article class="rounded-xl border border-gray-200 bg-white p-6 flex flex-col gap-4">
+              <span class="text-xs font-semibold text-gray-400">02 · Reflex</span>
+              <h3 class="text-lg font-medium">Rock, Paper, Scissors</h3>
+              <p class="text-sm text-gray-600">A simple competitive game that emphasizes flow control and UI feedback.</p>
+              <a
+                href="./pages/games/rps.html"
+                class="mt-auto inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+                >Play</a
+              >
             </article>
 
-            <article class="bg-white rounded-xl p-6 shadow-sm flex flex-col">
-              <h3 class="text-lg font-medium text-gray-900">Clicker Game</h3>
-              <p class="mt-2 text-sm text-gray-600">Click as many times as you can in a limited time!</p>
-              <a href="./pages/games/clicker.html" class="mt-auto inline-flex items-center justify-center
-         rounded-lg bg-gray-900
-         px-4 py-2 text-sm font-medium text-white
-         hover:bg-gray-800
-         active:scale-95
-         transition">Play Now</a>
+            <article class="rounded-xl border border-gray-200 bg-white p-6 flex flex-col gap-4">
+              <span class="text-xs font-semibold text-gray-400">03 · Speed</span>
+              <h3 class="text-lg font-medium">Clicker Game</h3>
+              <p class="text-sm text-gray-600">A fast-paced clicker game built to practice timing, state updates, and leaderboard flow.</p>
+              <a
+                href="./pages/games/clicker.html"
+                class="mt-auto inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+                >Play</a
+              >
             </article>
           </div>
         </div>
       </section>
 
-      <section id="about">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 py-16">
-          <header>
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">About Carbonsdale</h2>
-          </header>
-          <div class="mt-6 space-y-4 text-gray-600">
-            <p>Carbonsdale is a fictional game studio focused on building small, fun, and interactive web-based games using modern web technologies.</p>
-            <p>We believe that simple ideas, when executed well, can deliver enjoyable experiences for everyone.</p>
-          </div>
+      <section id="about" class="max-w-7xl mx-auto px-4 md:px-6 py-24">
+        <div class="max-w-3xl space-y-6">
+          <h2 class="text-2xl md:text-3xl font-semibold">About Carbonsdale</h2>
+          <p class="text-gray-600">
+            Carbonsdale is a fictional game studio built as a personal learning project. The focus is not on flashy visuals, but on writing clear, maintainable
+            code and understanding how small decisions affect the overall structure.
+          </p>
+
+          <p class="text-gray-600">
+            Each game is developed step by step, with logic and UI separated intentionally. Features are only added after the core structure is stable and
+            decisions are locked.
+          </p>
+
+          <p class="text-gray-600">
+            This project is a space to practice discipline, refactoring awareness, and building things that can be safely left and revisited later without fear.
+          </p>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-gray-800 font-semibold p-4 text-center border-t border-gray-200 bg-white/90">
-        &copy; 2025 Carbonsdale. All rights reserved.
-      </footer>
-    <script src="./src/js/global.js"></script>
+    <footer class="text-gray-800 font-semibold p-4 text-center border-t border-gray-200 bg-white/90">&copy; 2025 Carbonsdale. All rights reserved.</footer>
+
+    <script src="./src/js/global.js" type="module"></script>
   </body>
 </html>

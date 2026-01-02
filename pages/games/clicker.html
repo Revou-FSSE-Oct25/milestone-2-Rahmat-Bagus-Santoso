@@ -55,28 +55,65 @@
     </header>
 
     <!-- Main Content -->
-    <main class="min-h-screen pt-24 flex items-center justify-center px-4">
-      <section class="w-full max-w-md rounded-xl bg-white p-6 shadow-sm">
-        <h1 class="text-2xl font-semibold">Clicker Game</h1>
-        <p class="mt-2 text-gray-600">Click as many times as you can before time runs out.</p>
+    <main class="min-h-screen pt-24 px-4 flex justify-center">
+      <section class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 space-y-6">
+          <div class="rounded-xl bg-white p-5 shadow-sm">
+            <h2 class="text-lg font-semibold mb-2">How to Play</h2>
+            <p class="text-sm text-gray-600">
+              Click the button as many times as you can before the timer runs out. You can save final score to the leaderboard.
+            </p>
+          </div>
 
-        <div class="mt-6 text-center">
-          <p class="text-sm text-gray-600">Time left: <span id="timeLeft">10</span>s</p>
-          <p class="mt-2 text-lg font-medium">Clicks: <span id="clickCount">0</span></p>
+          <div class="rounded-xl bg-white p-6 shadow-sm space-y-6 text-center">
+            <div class="flex justify-between text-sm text-gray-600">
+              <p>Time Left: <span id="timeLeft" class="font-medium">10</span>s</p>
+              <p>Clicks: <span id="clickCount" class="font-medium">0</span></p>
+            </div>
+
+            <div>
+              <button id="clickButton" class="w-full rounded-md bg-gray-900 px-4 py-3 text-white font-semibold hover:bg-gray-800 disabled:opacity-40">
+                Click!
+              </button>
+            </div>
+
+            <div>
+              <button
+                id="resetButton"
+                class="w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-40"
+                disabled
+              >
+                Play Again
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="mt-6 flex justify-center gap-3">
-          <button id="clickBtn" class="rounded-md bg-gray-900 px-4 py-2 text-white hover:bg-gray-800">Click!</button>
+        <div class="space-y-6">
+          <div class="rounded-xl bg-white p-5 shadow-sm">
+            <h2 class="text-lg font-semibold mb-3">Username (optional)</h2>
+            <div class="flex gap-2">
+              <input
+                id="usernameInput"
+                type="text"
+                placeholder="Guest"
+                class="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-800"
+              />
+              <button id="usernameSubmit" class="rounded-md bg-gray-900 px-4 py-2 text-sm text-white hover:bg-gray-800">Save</button>
+            </div>
 
-          <button id="resetBtn" class="rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-40" disabled>
-            Play Again
-          </button>
+            <p class="mt-2 text-xs text-gray-500">Leave empty to stay as Guest.</p>
+          </div>
+
+          <div id="leaderboardSection" class="rounded-xl bg-white p-5 shadow-sm">
+            <h2 class="text-lg font-semibold mb-3">Leaderboard</h2>
+            <ul id="leaderboardList" class="space-y-1 text-sm text-gray-700"></ul>
+          </div>
         </div>
       </section>
     </main>
-    <!-- Footer -->
-    <footer class="text-gray-800 font-semibold p-4 text-center border-t border-gray-200 bg-white/90">&copy; 2025 Carbonsdale. All rights reserved.</footer>
-    <script src="../../src/js/global.js"></script>
-    <script src="../../src/js/clicker.js"></script>
+    <footer></footer>
+    <script src="../../src/js/global.js" type="module"></script>
+    <script src="../../src/js/clicker.ui.js" type="module"></script>
   </body>
 </html>

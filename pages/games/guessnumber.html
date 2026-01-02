@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Landing Page for the javascript games" />
-    <meta name="keywords" content="homepage, index, minigames, javascript games" />
+    <meta name="keywords" content="homepage, index, mini-games, javascript games" />
     <title>Guess Number Game Page</title>
     <link rel="stylesheet" href="../../dist/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -55,55 +55,77 @@
     </header>
 
     <!-- Main Content -->
-    <main class="min-h-screen pt-16 flex items-center justify-center px-4">
-      <section id="guessContent" class="w-full max-w-xl rounded-2xl bg-white p-6 shadow-lg md:p-8">
-        <h1 class="text-2xl font-semibold text-gray-900">Guess the Number</h1>
+    <main class="max-w-6xl mx-auto pt-16">
+      <section class="bg-white border rounded-2xl p-6 shadow-md space-y-6">
+        <h1 class="text-2xl font-semibold">Guess Number</h1>
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          <div class="md:col-span-2 space-y-6">
+            <section class="text-sm text-gray-600">
+              <h2 class="font-semibold text-sm mb-1">How to Play</h2>
+              <p class="text-sm text-gray-600">Guess the number between 1 and 100. You have limited attempts.</p>
+            </section>
 
-        <p class="mt-2 text-gray-600">Try to guess the randomly generated number between 1 and 100.</p>
+            <section class="min-h-10 flex items-center">
+              <p id="feedback" class="text-sm"></p>
+            </section>
 
-        <div id="initArea" class="mt-6">
-          <input
-            type="text"
-            id="userNameInput"
-            class="w-full rounded-md border border-gray-300 my-4 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400 transition"
-            placeholder="Enter your name (optional)"
-          />
-          <button id="startBtn" class="rounded-md bg-gray-900 px-4 py-2 text-white hover:bg-gray-800 transition disabled:opacity-50">Play</button>
-        </div>
+            <section class="flex flex-col items-center gap-4">
+              <input
+                id="guessInput"
+                type="number"
+                class="border rounded px-3 py-2 w-40 text-center focus:outline-none focus:ring-2 focus:ring-gray-400"
+                placeholder="Your guess"
+              />
 
-        <div id="gameArea" class="mt-6 hidden">
-          <div class="flex items-center gap-2">
-            <input
-              type="number"
-              id="guessNumber"
-              class="w-full rounded-md border border-gray-300 my-4 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400 transition appearance-none"
-              placeholder="Enter your guess"
-            />
+              <p class="text-sm">Attempts left: <span id="attemptsLeft" class="font-semibold">10</span></p>
 
-            <button
-              id="submitBtn"
-              class="h-10 px-4 rounded-md bg-gray-900 text-sm text-white flex items-center justify-center hover:bg-gray-800 transition disabled:opacity-50"
-            >
-              Submit
-            </button>
+              <div class="flex gap-3">
+                <button
+                  id="submitButton"
+                  class="px-4 h-10 bg-black text-white rounded hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Submit
+                </button>
+                <button id="playAgainButton" class="px-4 h-10 border rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300" disabled>
+                  Play Again
+                </button>
+              </div>
+            </section>
 
-            <button
-              id="playAgainBtn"
-              class="h-10 px-4 rounded-md border border-gray-300 text-sm text-gray-700 flex items-center justify-center hover:bg-gray-100 transition disabled:opacity-40 disabled:cursor-not-allowed"
-              disabled
-            >
-              Play Again
-            </button>
+            <section class="pt-2">
+              <h3 class="font-semibold text-sm text-gray-700 mb-2">Guess History</h3>
+              <ul id="guessHistory" class="flex flex-wrap gap-2 text-sm text-gray-600"></ul>
+            </section>
           </div>
 
-          <div id="feedback" class="mt-4 h-5 text-shadow-md font-medium text-gray-700"></div>
+          <aside class="md:col-span-1 space-y-6">
+            <section class="bg-white border rounded-xl p-5 shadow-sm">
+              <h2 class="text-sm font-semibold mb-3 text-gray-700">Username (optional)</h2>
+
+              <div class="flex gap-2">
+                <input
+                  id="usernameInput"
+                  type="text"
+                  placeholder="Guest"
+                  class="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-800"
+                />
+                <button id="usernameSubmit" class="rounded-md bg-gray-900 px-4 py-2 text-sm text-white hover:bg-gray-800">Save</button>
+              </div>
+
+              <p class="mt-2 text-xs text-gray-500">Leave empty to stay as Guest.</p>
+            </section>
+            <section class="bg-white border rounded-xl p-5 shadow-sm">
+              <h2 class="text-sm font-semibold mb-3 text-gray-700">Leaderboard</h2>
+              <ul id="leaderboard" class="text-sm space-y-1">
+                <li class="text-gray-500">No scores yet.</li>
+              </ul>
+            </section>
+          </aside>
         </div>
       </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="text-gray-800 font-semibold p-4 text-center border-t border-gray-200 bg-white/90">&copy; 2025 Carbonsdale. All rights reserved.</footer>
-    <script src="../../src/js/global.js"></script>
-    <script src="../../src/js/guessnumber.js"></script>
+    <footer></footer>
+    <script src="../../src/js/global.js" type="module"></script>
+    <script src="../../src/js/guessnumber.ui.js" type="module"></script>
   </body>
 </html>
