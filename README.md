@@ -46,10 +46,13 @@ project/
 │   └── contact.html
 ├── src/
 │   └── js/
-│       ├── clicker.js
+│       ├── clicker.logic.js
+│       ├── clicker.ui.js
 │       ├── global.js
-│       ├── guessnumber.js
-│       └── rps.html
+│       ├── guessnumber.logic.js
+│       ├── guessnumber.ui.js
+│       ├── rps.logic.js
+│       └── rps.ui.js
 └── README.md
 
 ```
